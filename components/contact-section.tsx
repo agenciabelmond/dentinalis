@@ -34,11 +34,11 @@ export function ContactSection() {
                   <div className="flex-1">
                     <h3 className="font-bold text-xl text-[#004B8C] mb-3">Endereço</h3>
                     <p className="text-gray-700 leading-relaxed">
-                      Av. Monte Negro, n° 1420 – Sala 01
+                      R. Álvaro Catão, n° 596 
                       <br />
-                      Bairro Santa Luzia, Criciúma/SC
+                      Operária Nova, Criciúma/SC
                       <br />
-                      CEP 88807-211
+                      CEP 88809-050
                     </p>
                   </div>
                 </div>
@@ -75,10 +75,10 @@ export function ContactSection() {
                   <div className="flex-1">
                     <h3 className="font-bold text-xl text-[#004B8C] mb-3">Contato</h3>
                     <a
-                      href="https://wa.me/5548998440060"
+                      href="https://wa.me/+55554899790532?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.."
                       className="text-gray-700 hover:text-[#2DC8D2] transition-colors text-lg"
                     >
-                      (48) 99844-0060
+                      55 48 9979-0532
                     </a>
                   </div>
                 </div>
@@ -90,7 +90,7 @@ export function ContactSection() {
                 size="lg"
                 className="w-full bg-[#2CC84D] hover:bg-[#2CC84D]/90 text-white font-semibold text-lg py-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
               >
-                <a href="https://wa.me/5548998440060">Agendar Consulta</a>
+                <a href="https://wa.me/+55554899790532?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">Agendar Consulta</a>
               </Button>
             </div>
           </div>

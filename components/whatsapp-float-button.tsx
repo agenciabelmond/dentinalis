@@ -5,9 +5,9 @@ import { MessageCircle } from "lucide-react"
 export function WhatsAppFloatButton() {
   const handleWhatsAppClick = () => {
     // Número do WhatsApp - ajuste conforme necessário
-    const phoneNumber = "5511999999999" // Formato: código do país + DDD + número
-    const message = encodeURIComponent("Olá! Gostaria de agendar uma avaliação.")
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank")
+    const phoneNumber = "554899790532" // Formato: código do país + DDD + número
+    const message = encodeURIComponent("Olá! Vim pelo site e gostaria de mais informações.")
+    window.open(`https://wa.me/+55554899790532?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.`, "_blank")
   }
 
   return (
