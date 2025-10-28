@@ -48,7 +48,7 @@ export function HeroSection() {
           <div className="relative">
             <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/dentinalis.jpeg"
+                src="/clinica.jpg"
                 alt="Fachada da Clínica Dentinais"
                 fill
                 className="object-cover"
