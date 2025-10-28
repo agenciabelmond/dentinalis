@@ -29,7 +29,7 @@ export function Navigation() {
               alt="Dentinalis Logo"
               width={200}
               height={70}
-              className="h-14 w-auto"
+              className="h-18 w-auto"
             />
           </div>
 

@@ -25,16 +25,21 @@ export function VideoSection() {
                 ambiente acolhedor garantem uma experiência única e transformadora.
               </p>
 
-              <Button
-                size="lg"
-                className="bg-[#2CC84D] hover:bg-[#25b043] text-white font-semibold px-8 py-6 text-lg"
-                asChild
-              >
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Agendar minha Avaliação
-                </a>
-              </Button>
+             <Button
+              size="lg"
+              className="bg-[#2CC84D] hover:bg-[#25b043] text-white font-semibold px-10 py-7 text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
+              asChild
+            >
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                {/* Logo do WhatsApp */}
+                <img
+                  src="whatsapp (2).png" // coloque o caminho correto da imagem
+                  alt="WhatsApp"
+                  className="mr-2 h-9 w-9"
+                />
+                Agendar minha Avaliação
+              </a>
+            </Button>
             </div>
           </div>
         </div>

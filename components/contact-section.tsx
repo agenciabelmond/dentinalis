@@ -26,7 +26,7 @@ export function ContactSection() {
             {/* Coluna das Informações */}
             <div className="space-y-8">
               {/* Endereço */}
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#2DC8D2] hover:shadow-xl transition-shadow">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#0B3D91] hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="bg-[#2DC8D2]/10 p-3 rounded-lg">
                     <MapPin className="h-6 w-6 text-[#2DC8D2]" />
@@ -45,7 +45,7 @@ export function ContactSection() {
               </div>
 
               {/* Horário de Funcionamento */}
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#2DC8D2] hover:shadow-xl transition-shadow">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#0B3D91] hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="bg-[#2DC8D2]/10 p-3 rounded-lg">
                     <Clock className="h-6 w-6 text-[#2DC8D2]" />
@@ -67,7 +67,7 @@ export function ContactSection() {
               </div>
 
               {/* Contato */}
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#2DC8D2] hover:shadow-xl transition-shadow">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#0B3D91] hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="bg-[#2DC8D2]/10 p-3 rounded-lg">
                     <Phone className="h-6 w-6 text-[#2DC8D2]" />

@@ -26,16 +26,22 @@ export function AboutSection() {
              Nossa estrutura moderna e acolhedora reflete ética, confiança e cuidado em cada detalhe. Mais de uma década depois, seguimos unindo ciência e empatia para transformar sorrisos e histórias.
             </p>
 
-            <Button
+          <Button
               size="lg"
               className="bg-[#2CC84D] hover:bg-[#25b043] text-white font-semibold px-10 py-7 text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
               asChild
             >
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-6 w-6" />
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                {/* Logo do WhatsApp */}
+                <img
+                  src="whatsapp (2).png" // coloque o caminho correto da imagem
+                  alt="WhatsApp"
+                  className="mr-2 h-9 w-9"
+                />
                 Agendar minha Avaliação
               </a>
             </Button>
+
           </div>
 
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">

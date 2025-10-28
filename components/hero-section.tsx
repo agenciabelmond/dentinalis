@@ -10,37 +10,43 @@ export function HeroSection() {
     <section
       id="inicio"
       // 👇 Aqui está o degradê ajustável (mude 25% para mais ou menos conforme desejar)
-      className="relative bg-[linear-gradient(to_bottom,_#1769A3_0%,_#1769A3_25%,_white_100%)] overflow-hidden pt-20"
+      className="relative bg-[linear-gradient(to_bottom,_#0A2463_0%,_#0A2463_25%,_white_100%)] overflow-hidden pt-20"
     >
       <div className="container relative mx-auto px-4 py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Texto */}
           <div className="space-y-8 z-10 text-gray-900">
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-[#ffffff]">
-              Tenha dentes fixos em 72h e{" "}
-              <span className="bg-[#ffffff]/10 px-3 rounded-lg">garantia do tratamento</span>
-            </h1>
+      <h1 className="text-5xl lg:text-6xl text-white font-bold leading-tight">
+            <span className="bg-[#ffffff]/10 px-3  rounded-lg">
+            Tenha dentes fixos em 72h e garantia do tratamento
+            </span>
+          </h1>
 
-            <p className="text-xl text-white leading-relaxed">
-              Recupere sua autoestima com um tratamento de implantes dentários que oferece dentes fixos em tempo recorde
-              e sem enxertos ósseos.
-            </p>
+          <p className="text-xl text-white leading-relaxed">
+            Recupere sua autoestima com um tratamento de implantes dentários que oferece dentes fixos em tempo recorde
+            e sem enxertos ósseos.
+          </p>
+              <Button
+                size="lg"
+                className="bg-[#2CC84D] hover:bg-[#25b043] text-white font-semibold px-10 py-7 text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
+                asChild
+              >
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                  {/* Logo do WhatsApp */}
+                  <img
+                    src="whatsapp (2).png" // coloque o caminho correto da imagem
+                    alt="WhatsApp"
+                    className="mr-2 h-10 w-10"
+                  />
+                  Agendar minha Avaliação
+                </a>
+              </Button>
 
-            <Button
-              size="lg"
-              className="bg-[#2CC84D] hover:bg-[#25b043] text-white font-semibold px-10 py-7 text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
-              asChild
-            >
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-6 w-6" />
-                Agendar minha Avaliação
-              </a>
-            </Button>
           </div>
 
           {/* Imagem */}
           <div className="relative">
-            <div className="relative h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/clinica.jpg"
                 alt="Fachada da Clínica Dentinais"

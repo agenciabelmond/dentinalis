@@ -2,7 +2,7 @@ import { MapPin, Users, Award } from "lucide-react"
 
 export function StatsBar() {
   return (
-    <div className="relative bg-gradient-to-r from-[#004B8C] to-[#2DC8D2] text-white py-8 shadow-lg overflow-hidden">
+    <div className="relative bg-gradient-to-r from-[#0A2463] to-[#0B3D91] text-white py-8 shadow-lg overflow-hidden">
       {/* Borda branca animada */}
       <div className="absolute inset-0 border-4 border-white/30 animate-pulse"></div>
       <div className="absolute inset-0 border-2 border-white/50 rounded-lg m-2"></div>
