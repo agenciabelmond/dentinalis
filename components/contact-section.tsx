@@ -3,6 +3,9 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export function ContactSection() {
+    const whatsappLink =
+    "https://wa.me/+5548999790555?text=%5BN%C3%83O%20APAGAR%5DOl%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+
   return (
     <section id="localizacao" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
@@ -16,7 +19,7 @@ export function ContactSection() {
             {/* Coluna da Imagem */}
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7b63a895-66cd-4ad9-bcb6-5d97ef07493a.jfif-1jo9U0e5Qhxd8tGiSJrpQgSeUivXUD.jpeg"
+                src="frente.png"
                 alt="Fachada da Clínica Dentinalis"
                 fill
                 className="object-cover"
@@ -36,9 +39,9 @@ export function ContactSection() {
                     <p className="text-gray-700 leading-relaxed">
                       R. Álvaro Catão, n° 596 
                       <br />
-                      Operária Nova, Criciúma/SC
+                      Santa Catarina, Criciúma/SC
                       <br />
-                      CEP 88809-050
+                      CEP 88.810-255
                     </p>
                   </div>
                 </div>
@@ -55,7 +58,7 @@ export function ContactSection() {
                     <div className="space-y-2 text-gray-700">
                       <div className="flex justify-between">
                         <span className="font-medium">Segunda a Sexta:</span>
-                        <span>8h às 12h - 13h às 18h</span>
+                        <span>8:00 às 12:00 - 13:30 às 19:00</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">Sábados:</span>
@@ -75,10 +78,10 @@ export function ContactSection() {
                   <div className="flex-1">
                     <h3 className="font-bold text-xl text-[#004B8C] mb-3">Contato</h3>
                     <a
-                      href="https://wa.me/+55554899790532?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.."
+                      href="https://wa.me/+5548999790555?text=%5BN%C3%83O%20APAGAR%5DOl%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
                       className="text-gray-700 hover:text-[#2DC8D2] transition-colors text-lg"
                     >
-                      55 48 9979-0532
+                      (48) 99979-0555 
                     </a>
                   </div>
                 </div>
@@ -90,11 +93,59 @@ export function ContactSection() {
                 size="lg"
                 className="w-full bg-[#2CC84D] hover:bg-[#2CC84D]/90 text-white font-semibold text-lg py-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
               >
-                <a href="https://wa.me/+55554899790532?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">Agendar Consulta</a>
+                <a href="https://wa.me/+5548999790555?text=%5BN%C3%83O%20APAGAR%5DOl%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">Agendar Consulta</a>
               </Button>
             </div>
           </div>
         </div>
+        <br></br><br></br>
+  {/* Seção Fotos da Clínica – Compacta */}
+        <section className="pt-4 pb-10 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+
+            {/* Centralização do grid */}
+            <div className="grid md:grid-cols-3 gap-6 justify-items-center">
+
+              {/* Foto 1 */}
+              <div className="text-center">
+                <img
+                  src="recepcao.png"
+                  alt="Recepção Dentinalis"
+                  className="rounded-xl shadow-md object-cover w-80 h-52" // AUMENTO
+                />
+                <p className="text-[#001F47] text-sm font-medium mt-2">
+                  Recepção
+                </p>
+              </div>
+
+              {/* Foto 2 */}
+              <div className="text-center">
+                <img
+                  src="consultorio.jpg"
+                  alt="Consultório Dentinalis"
+                  className="rounded-xl shadow-md object-cover w-80 h-52"
+                />
+                <p className="text-[#001F47] text-sm font-medium mt-2">
+                  Consultório
+                </p>
+              </div>
+
+              {/* Foto 3 */}
+              <div className="text-center">
+                <img
+                  src="dentinalis.png.png"
+                  alt="Centro Cirúrgico Dentinalis"
+                  className="rounded-xl shadow-md object-cover w-80 h-52"
+                />
+                <p className="text-[#001F47] text-sm font-medium mt-2">
+                  Fachada
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
 
         {/* Footer */}
         <div className="mt-16 text-center text-sm text-gray-500">

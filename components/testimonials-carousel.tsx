@@ -1,55 +1,65 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { MessageCircle } from "lucide-react"
+import { MessageCircle, DollarSign, CreditCard, Building } from "lucide-react"
 import Image from "next/image"
 
 export function TestimonialsCarousel() {
   const whatsappLink =
-    "https://wa.me/+55554899790532?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+    "https://wa.me/+5548999790555?text=%5BN%C3%83O%20APAGAR%5DOl%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
 
   return (
-    <section id="depoimentos" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Confira as Transformações dos nossos pacientes:
-          </h2>
-          <p className="text-xl text-gray-700">
-            Centenas de pessoas transformaram a sua aparência, confiança e sua qualidade de vida.
-          </p>
-        </div>
+    <section id="pagamento" className="py-20 bg-gradient-to-b from-[#F6F9FF] from-5% via-[#0A295B] via-25% to-[#001F47] to-100%">
+      <div className="container mx-auto px-6 max-w-6xl">
+        
+        <div className="bg-[#001F47] rounded-[32px] shadow-2xl p-12 flex flex-col lg:flex-row items-center justify-between gap-14 border border-[#00346F]">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="relative h-64 rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src={`/before-after-dental-implant-transformation-patient.jpg?height=300&width=400&query=before after dental implant transformation patient ${i}`}
-                alt={`Transformação paciente ${i}`}
-                fill
-                className="object-cover"
-              />
+          {/* Lado esquerdo */}
+          <div className="flex flex-col lg:items-start items-center">
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-8 text-center lg:text-left">
+              Parcelamento Fácil
+            </h2>
+
+            {/* Bloco de bandeiras */}
+            <div className="mb-8 bg-transparent">
+                    <Image
+              src="/pag.png"
+              alt="Formas de pagamento"
+              width={380}
+              height={70}
+              className="object-contain"
+            />
             </div>
-          ))}
-        </div>
 
-        <div className="text-center">
-       
-          <Button
+            {/* Botão WhatsApp */}
+            <Button
               size="lg"
-              className="bg-[#2CC84D] hover:bg-[#25b043] text-white font-semibold px-10 py-7 text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
+              className="bg-[#2DC653] hover:bg-[#25a644] text-white font-bold px-12 py-7 text-xl rounded-full shadow-xl hover:scale-105 transition-all"
               asChild
             >
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                {/* Logo do WhatsApp */}
-                <img
-                  src="whatsapp (2).png" // coloque o caminho correto da imagem
-                  alt="WhatsApp"
-                  className="mr-2 h-9 w-9"
-                />
-                Agendar minha Avaliação
+              <a href={whatsappLink} target="_blank" className="flex items-center">
+                IMPLANTE NO BOLETO
+                <MessageCircle className="ml-3 w-7 h-7 text-white" />
               </a>
             </Button>
+          </div>
+
+          {/* Bullet points */}
+          <div className="space-y-8 text-white text-2xl font-semibold leading-snug">
+            <div className="flex items-center gap-4">
+              <DollarSign className="w-10 h-10 text-white" />
+              Condição especial pagamento à vista
+            </div>
+            <div className="flex items-center gap-4">
+              <CreditCard className="w-10 h-10 text-white" />
+              Parcelas em até 18X
+            </div>
+            <div className="flex items-center gap-4">
+              <Building className="w-10 h-10 text-white" />
+              Sem burocracia
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

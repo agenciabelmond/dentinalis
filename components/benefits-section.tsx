@@ -1,90 +1,137 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Shield, Anchor, Smile, Utensils, Clock, Sparkles, Zap, CheckCircle2 } from "lucide-react"
+"use client"
+
+import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
+import { ChevronRight } from "lucide-react"
+import { useInView } from "@/hooks/use-in-view"
 
 export function BenefitsSection() {
-  const benefits = [
-    {
-      icon: Shield,
-      title: "Durabilidade Elevada",
-      description: "Uma solução para toda a vida, feita para durar.",
-    },
-   {
-      icon: Utensils,
-      title: "Melhora na Mastigação e Paladar",
-      description: "Sem limitações para apreciar suas refeições favoritas, sentindo o sabor de cada alimento.",
-    },
-    {
-      icon: Smile,
-      title: "Natural e Confortável",
-      description: "Não solta, não incomoda e permite uma experiência de um sorriso mais natural.",
-    },
- 
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const isInView = useInView(sectionRef, { once: true, threshold: 0.1 })
+  const [isVisible, setIsVisible] = useState(false)
 
-  ]
+  useEffect(() => {
+    if (isInView) {
+      setIsVisible(true)
+    }
+  }, [isInView])
 
-  const advantages = [
+  const procedures = [
     {
-      icon: Zap,
-      title: "Velocidade",
-      description: "Sob avaliação tenha seus dentes fixos em 72 horas.",
+      id: 1,
+      title: "Estética Dental",
+      image: "/estetica.jpg",
+      items: [
+        "Lentes de contato dental",
+        "Facetas de resina",
+        "Clareamento dental",
+        "Restaurações estéticas"
+      ]
     },
-
     {
-      icon: Clock,
-      title: "Tempo",
-      description: "Tratamento bem mais rápido, comparado aos outros.",
+      id: 2,
+      title: "Ortodontia e Alinhamento",
+      image: "/aparelho.jpg",
+      items: [
+        "Invisalign",
+        "Ortodontia convencional",
+        "Aparelhos estéticos"
+      ]
     },
+    {
+      id: 3,
+      title: "Reabilitação e Saúde Bucal",
+      image: "/implante.png",
+      items: [
+        "Implantes dentários",
+        "Próteses fixas",
+        "Protocolos sobre implantes",
+        "Cirurgias",
+        "Endodontia mecanizada",
+        "Profilaxia"
+      ]
+    }
   ]
 
   return (
-    <section id="servicos" className="py-16 bg-gradient-to-br from-[#004B8C] to-[#003366]">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Os Implantes Dentários e a Prótese Protocolo são a solução mais rápida e fácil para recuperar seu sorriso e
-            qualidade de vida.
+    <section
+     id="servicos"
+      ref={sectionRef}
+      className="py-16 px-4 bg-[linear-gradient(to_bottom,#001F47_0%,#001F47_60%,#e6ebf7_90%,white_100%)]"
+    >
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Título Centralizado */}
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Nossos Serviços
           </h2>
-          <div className="h-1 w-20 bg-[#2DC8D2] mx-auto mt-6"></div>
+          <p className="text-white max-w-2xl mx-auto text-base md:text-lg">
+            Conheça nossa gama completa de procedimentos odontológicos pensados
+            para transformar seu sorriso.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {benefits.map((benefit, index) => (
-            <Card
-              key={index}
-              className="border-none shadow-md hover:shadow-xl transition-all hover:-translate-y-1 bg-white relative overflow-hidden group"
+        {/* Grid Responsivo */}
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          {procedures.map((service, index) => (
+            <div
+              key={service.id}
+              className={`bg-white w-full max-w-[420px] border border-gray-100 rounded-xl overflow-hidden
+              hover:shadow-xl transition-all duration-700 group
+              ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+            `}
+              style={{ transitionDelay: `${index * 200}ms` }}
             >
-              {/* Borda inferior animada */}
-              <div className="absolute bottom-0 left-0 h-1 bg-[#2DC8D2] w-0 group-hover:w-full transition-all duration-500"></div>
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-[#2DC8D2] rounded-xl flex items-center justify-center mb-4">
-                  <benefit.icon className="h-6 w-6 text-white" />
+
+              {/* IMAGEM */}
+              <div className="relative h-[220px] w-full overflow-hidden">
+                <div className="absolute inset-0 p-2">
+                  <div className="relative h-full w-full overflow-hidden rounded-lg">
+
+                    {/* Borda azul decorativa */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#55bbad]/30 to-[#55bbad]/10 rounded-lg z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    {/* Borda interna */}
+                    <div className="absolute inset-0 border-4 border-[#55bbad]/20 rounded-lg z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
-                <p className="text-gray-700">{benefit.description}</p>
-              </CardContent>
-            </Card>
+              </div>
+                 {/* CONTEÚDO */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+
+                <ul className="space-y-2 mb-4">
+                  {service.items.map((item, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-[#55bbad]"></span>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="https://wa.me/+5548999790555?text=%5BN%C3%83O%20APAGAR%5DOl%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#55bbad] font-medium hover:underline flex items-center"
+                >
+                  Saiba Mais <ChevronRight className="h-4 w-4 ml-1" />
+                </a>
+              </div>
+
+            </div>
           ))}
         </div>
-
-      <div className="grid md:grid-cols-1 gap-2 justify-center grid md:grid-cols-2 gap-3 justify-center">
-        {advantages.map((advantage, index) => (
-          <Card
-            key={index}
-            className="border-none shadow-md hover:shadow-xl transition-all hover:-translate-y-1 bg-white relative overflow-hidden group max-w-md mx-auto"
-          >
-            <div className="absolute bottom-0 left-0 h-1 bg-[#2DC8D2] w-0 group-hover:w-full transition-all duration-500"></div>
-            <CardContent className="p-6"> {/* Aumentei o padding */}
-              <div className="w-12 h-12 bg-[#004B8C] rounded-xl flex items-center justify-center mb-4"> {/* Ícone maior */}
-                <advantage.icon className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{advantage.title}</h3> {/* Fonte maior */}
-              <p className="text-gray-700 text-base">{advantage.description}</p> {/* Fonte maior */}
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-
       </div>
     </section>
   )

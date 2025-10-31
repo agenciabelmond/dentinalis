@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export function AboutSection() {
   const whatsappLink =
-    "https://wa.me/+55554899790532?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+    "https://wa.me/+5548999790555?text=%5BN%C3%83O%20APAGAR%5DOl%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.."
 
   return (
     <section id="quem-somos" className="py-16 bg-white">
@@ -20,10 +20,7 @@ export function AboutSection() {
             <div className="h-1 w-20 bg-[#2DC8D2]"></div>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              <strong>Desde 2009</strong>, a Dentinalis Odontologia Integrada cuida de pessoas com atendimento completo,
-              humano e de excelência técnica. Acreditamos que a <strong>odontologia transforma autoestima, bem-estar e qualidade de vida</strong>, 
-              oferecendo diversas especialidades em um único espaço. Com tecnologia avançada e atualização constante, consolidamo-nos como <strong>referência no sul de Santa Catarina.</strong>
-             Nossa estrutura moderna e acolhedora reflete ética, confiança e cuidado em cada detalhe. Mais de uma década depois, seguimos unindo ciência e empatia para transformar sorrisos e histórias.
+              <strong>Desde 2009</strong>, a Dentinalis Odontologia Integrada cuida de pessoas com um atendimento completo, humano e de excelência técnica. Acreditamos que a <strong>odontologia transforma</strong> autoestima, bem-estar e qualidade de vida, reunindo diversas especialidades em um único espaço.
             </p>
 
           <Button
@@ -46,7 +43,7 @@ export function AboutSection() {
 
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/happy-patient-with-dentist-holding-certificate-tra.jpg"
+              src="recepcao.jpg"
               alt="Paciente satisfeito com tratamento"
               fill
               className="object-cover"

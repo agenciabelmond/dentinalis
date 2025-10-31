@@ -1,27 +1,41 @@
-import { MapPin, Users, Award } from "lucide-react"
+import { MapPin, CreditCard } from "lucide-react"
+
+const statsData = [
+  {
+    icon: CreditCard,
+    title: "Parcele Fácil",
+    text: "Parcelamos seu implante dentário no Boleto ou Cartão de Crédito."
+  },
+  {
+    icon: MapPin,
+    title: "Perto de Você",
+    text: "Estamos na Rua Álvaro Catão, 596 - Santa Catarina, Criciúma - SC."
+  }
+]
 
 export function StatsBar() {
   return (
-    <div className="relative bg-gradient-to-r from-[#0A2463] to-[#0B3D91] text-white py-8 shadow-lg overflow-hidden">
-      {/* Borda branca animada */}
-      <div className="absolute inset-0 border-4 border-white/30 animate-pulse"></div>
-      <div className="absolute inset-0 border-2 border-white/50 rounded-lg m-2"></div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          <div className="flex items-center justify-center gap-3">
-            <MapPin className="h-8 w-8 text-white" />
-            <span className="text-lg font-semibold">Criciúma - SC</span>
+    <div className="container mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+        {statsData.map((item, index) => (
+          <div
+            key={index}
+            className="relative bg-[#0A2463] text-white px-6 py-7 rounded-2xl shadow-xl
+            transition-all duration-300 transform hover:-translate-y-1
+            hover:shadow-[0_0_22px_rgba(10,36,99,0.55)]
+            border border-white/10 backdrop-blur-md"
+          >
+            <div className="flex items-center gap-5">
+              <item.icon className="h-10 w-10 text-white" />
+              <div>
+                <h3 className="text-xl font-bold leading-tight">{item.title}</h3>
+                <p className="text-white/90 text-sm leading-snug mt-1">
+                  {item.text}
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="flex items-center justify-center gap-3">
-            <Users className="h-8 w-8 text-white" />
-            <span className="text-lg font-semibold">+ 15 anos de Experiência</span>
-          </div>
-          <div className="flex items-center justify-center gap-3">
-            <Award className="h-8 w-8 text-white" />
-            <span className="text-lg font-semibold">Resultados Incríveis</span>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   )
