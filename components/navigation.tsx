@@ -46,30 +46,11 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:block">
-          <Button
+            <Button
               className="bg-[#2CC84D] hover:bg-[#25b043] text-white font-semibold px-6 py-2 rounded-full shadow-md hover:shadow-lg transition-all"
               asChild
             >
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => {
-                  const url = whatsappLink
-                  const fn = (window as any).gtag_report_conversion
-                  if (typeof fn === "function") {
-                    e.preventDefault()
-                    const returned = fn(url)
-                    if (returned === true) {
-                      window.open(url, "_blank", "noopener,noreferrer")
-                    } else {
-                      setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), 200)
-                    }
-                    return false
-                  }
-                  return true
-                }}
-              >
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                 Agendar Consulta
               </a>
             </Button>
@@ -95,32 +76,8 @@ export function Navigation() {
                   {item.label}
                 </a>
               ))}
-             <Button className="bg-[#2CC84D] hover:bg-[#25b043] text-white font-semibold rounded-full" asChild>
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => {
-                    const url = whatsappLink
-                    const fn = (window as any).gtag_report_conversion
-                    if (typeof fn === "function") {
-                      e.preventDefault()
-                      try {
-                        const returned = fn(url)
-                        if (returned === true) {
-                          window.open(url, "_blank", "noopener,noreferrer")
-                        } else {
-                          setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), 200)
-                        }
-                      } catch {
-                        // se fn lançar erro, abrir link normalmente
-                        window.open(url, "_blank", "noopener,noreferrer")
-                      }
-                      return false
-                    }
-                    return true
-                  }}
-                >
+              <Button className="bg-[#2CC84D] hover:bg-[#25b043] text-white font-semibold rounded-full" asChild>
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   Agendar Consulta
                 </a>
               </Button>

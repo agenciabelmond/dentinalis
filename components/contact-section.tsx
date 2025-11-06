@@ -93,28 +93,10 @@ export function ContactSection() {
                 size="lg"
                 className="w-full bg-[#2CC84D] hover:bg-[#2CC84D]/90 text-white font-semibold text-lg py-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
               >
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-gtm="whatsapp-booking"
-                  onClick={(e) => {
-                    const url = whatsappLink
-                    const fn = (window as any).gtag_report_conversion
-                    if (typeof fn === "function") {
-                      e.preventDefault()
-                      const returned = fn(url)
-                      if (returned === true) {
-                        window.open(url, "_blank", "noopener,noreferrer")
-                      } else {
-                        // fallback: abrir após pequeno atraso se a função não abrir automaticamente
-                        setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), 200)
-                      }
-                      return false
-                    }
-                    return true
-                  }}
-                >
+                
+              <a 
+              href="https://wa.me/+5548999790555?text=%5BN%C3%83O%20APAGAR%5DOl%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">
+      
                   Agendar Consulta
                 </a>
               </Button>

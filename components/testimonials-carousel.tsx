@@ -37,31 +37,7 @@ export function TestimonialsCarousel() {
               className="bg-[#2DC653] hover:bg-[#25a644] text-white font-bold px-12 py-7 text-xl rounded-full shadow-xl hover:scale-105 transition-all"
               asChild
             >
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-gtm="whatsapp-booking"
-                onClick={(e) => {
-                  const url = whatsappLink
-                  const fn = (window as any).gtag_report_conversion
-                  if (typeof fn === "function") {
-                    e.preventDefault()
-                    try {
-                      const returned = fn(url)
-                      if (returned === true) {
-                        window.open(url, "_blank", "noopener,noreferrer")
-                      } else {
-                        setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), 200)
-                      }
-                    } catch {
-                      window.open(url, "_blank", "noopener,noreferrer")
-                    }
-                    return false
-                  }
-                  return true
-                }}
-                >
+              <a href={whatsappLink} target="_blank" className="flex items-center">
                 IMPLANTE NO BOLETO
                 <MessageCircle className="ml-3 w-7 h-7 text-white" />
               </a>
