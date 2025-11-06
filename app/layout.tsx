@@ -1,35 +1,70 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+import { Montserrat } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
-  title: "Dentinalis- Implantes Dentários em 72h",
+  title: "Policlínica - Seu Sorriso em Primeiro Lugar",
   description:
-    "Especialistas em Implantes Dentários. Tenha dentes fixos em 72h com a técnica All-On-4. Mais de 15 anos de experiência em Criciúma - SC.",
-  generator: "Belmond",
+    "Conecte-se com a equipe da Policlínica e continue seu agendamento com segurança.",
   icons: {
-    icon: "icone.jpeg", // aqui você indica o favicon
+    icon: "icon.png",
   },
+  generator: "v0.app",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="icon" href="/favicon.png" />
+        {/* Google tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17677069576"
+        />
+
+        <Script strategy="afterInteractive" id="gtag-init">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17677069576');
+          `}
+        </Script>
+
+        {/* Event snippet for Contato conversion page */}
+        <Script strategy="afterInteractive" id="gtag-conversion">
+          {`
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                'send_to': 'AW-17677069576/SzhsCIiDhrMbEIjaiu1B',
+                'value': 1.0,
+                'currency': 'BRL',
+                'event_callback': callback
+              });
+              return false;
+            }
+          `}
+        </Script>
       </head>
-      <body className={`${inter.className} antialiased`}>
-        {children}
-        <Analytics />
-      </body>
+
+      <body className={montserrat.className}>{children}</body>
     </html>
   );
 }

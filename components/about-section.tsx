@@ -28,7 +28,28 @@ export function AboutSection() {
               className="bg-[#2CC84D] hover:bg-[#25b043] text-white font-semibold px-10 py-7 text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
               asChild
             >
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+                data-gtm="whatsapp-booking"
+                onClick={(e) => {
+                  const url = whatsappLink
+                  const fn = (window as any).gtag_report_conversion
+                  if (typeof fn === "function") {
+                    e.preventDefault()
+                    const returned = fn(url)
+                    if (returned === true) {
+                      window.open(url, "_blank", "noopener,noreferrer")
+                    } else {
+                      setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), 200)
+                    }
+                    return false
+                  }
+                  return true
+                }}
+              >
                 {/* Logo do WhatsApp */}
                 <img
                   src="whatsapp (2).png" // coloque o caminho correto da imagem

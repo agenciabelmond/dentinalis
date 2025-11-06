@@ -39,7 +39,27 @@ export function DoctorSection() {
               className="bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-8 py-6 text-lg"
               asChild
             >
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-gtm="whatsapp-booking"
+                onClick={(e) => {
+                  const url = whatsappLink
+                  const fn = (window as any).gtag_report_conversion
+                  if (typeof fn === "function") {
+                    e.preventDefault()
+                    const returned = fn(url)
+                    if (returned === true) {
+                      window.open(url, "_blank", "noopener,noreferrer")
+                    } else {
+                      setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), 200)
+                    }
+                    return false
+                  }
+                  return true
+                }}
+              >
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Agendar minha Avaliação
               </a>

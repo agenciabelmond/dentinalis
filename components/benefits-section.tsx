@@ -119,11 +119,27 @@ export function BenefitsSection() {
                   ))}
                 </ul>
 
-                <a
+           <a
                   href="https://wa.me/+5548999790555?text=%5BN%C3%83O%20APAGAR%5DOl%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#55bbad] font-medium hover:underline flex items-center"
+                  data-gtm="whatsapp-booking"
+                  onClick={(e) => {
+                    const url = "https://wa.me/+5548999790555?text=%5BN%C3%83O%20APAGAR%5DOl%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+                    const fn = (window as any).gtag_report_conversion
+                    if (typeof fn === "function") {
+                      e.preventDefault()
+                      const returned = fn(url)
+                      if (returned === true) {
+                        window.open(url, "_blank", "noopener,noreferrer")
+                      } else {
+                        setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), 200)
+                      }
+                      return false
+                    }
+                    return true
+                  }}
                 >
                   Saiba Mais <ChevronRight className="h-4 w-4 ml-1" />
                 </a>
